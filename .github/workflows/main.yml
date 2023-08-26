@@ -21,3 +21,15 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  deploy:
+    runs-on: ubuntu-latest
+    
+    environment: production
+
+    steps:
+      - name: use environment variable
+        run: echo ${{ vars.SOME_VAR }}
+      - name: use secrets
+        run: echo ${{ secrets.API_KEY }}
+        
