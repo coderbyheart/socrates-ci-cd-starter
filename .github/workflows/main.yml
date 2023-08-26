@@ -17,3 +17,6 @@ jobs:
           node-version: "20.x"
           
       - run: node -v
+
+      - name: Run tests
+        run: npm test
