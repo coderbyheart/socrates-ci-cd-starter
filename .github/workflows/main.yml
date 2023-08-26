@@ -10,10 +10,14 @@ jobs:
     steps:
       - run: echo "Hello world!"
       - run: exit 1
+      - run: echo "Cleanup!"
+        if: always()
 
   deploy:
     needs: [tests]
     runs-on: ubuntu-latest
+
+    if: always()
 
     steps:
       - run: echo "Lets deploy!"
