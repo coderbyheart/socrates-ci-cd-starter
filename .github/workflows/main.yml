@@ -8,5 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      
       - run: echo "Hello world!"
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: "20.x"
+          
       - run: node -v
